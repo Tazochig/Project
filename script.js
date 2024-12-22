@@ -8,7 +8,7 @@ btn.addEventListener("click", () => {
     block: "center",
   });
 });
-// videoze custom buttoni
+// videoze custom buttonii
 const video = document.getElementsByClassName("custom-video__video");
 let i;
 for (i = 0; i < video.length; i++) {
