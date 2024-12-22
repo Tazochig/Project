@@ -1,48 +1,3 @@
-// smoothly ro chavides dacherisas buttonze
-let btn = document.getElementById("choose_us_btn");
-let ctn = document.getElementById("contacts");
-
-btn.addEventListener("click", () => {
-  ctn.scrollIntoView({
-    behavior: "smooth",
-    block: "center",
-  });
-});
-// videoze custom buttonii
-const video = document.getElementsByClassName("custom-video__video");
-let i;
-for (i = 0; i < video.length; i++) {
-  video[i].addEventListener("click", function () {
-    const controls = this.nextElementSibling;
-    if (controls.innerHTML === "▶") {
-      controls.innerHTML = "| |";
-      this.play();
-    } else {
-      controls.innerHTML = "▶";
-      this.pause();
-    }
-  });
-  video[i].addEventListener("mouseout", function () {
-    const controls = this.nextElementSibling;
-    if (!this.paused) {
-      controls.style.display = "none";
-    }
-  });
-  video[i].addEventListener("mouseover", function () {
-    const controls = this.nextElementSibling;
-    controls.style.display = "flex";
-  });
-  video[i].addEventListener(
-    "ended",
-    function () {
-      const controls = this.nextElementSibling;
-      controls.style.display = "flex";
-      controls.innerHTML = "▶";
-    },
-    false
-  );
-}
-
 // pricing divs script
 
 let pricingDivs = document.querySelectorAll(".pricing_div");
@@ -80,7 +35,6 @@ pricingDivs.forEach((div) => {
   });
 });
 
-
 // regex validation and quotes with burger menu
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".header-section1-nav-group2");
@@ -100,7 +54,7 @@ const quotes = [
   "The only way out is through.",
   "Dream big. Work hard. Stay focused.",
   "Everything you need is already inside you.",
-  "What you get by achieving your goals is not as important.",
+  "ადამიანები ხშირად გეტყვიან, რომ არ გამოიგვაო, უნა გამაიყვანო!",
   "Your time is limited, don't waste it living someone else's life.",
   "Success is not final, failure is not fatal.",
   "Life is what happens when you're busy making other plans.",
