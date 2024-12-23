@@ -3,7 +3,7 @@ tippy(".dot", {
     const info = reference.getAttribute("data-info");
     const imageUrl = reference.getAttribute("data-image");
     return `<div>
-            <img src="${imageUrl}" alt="${info}" style="display: block; margin: 0 auto;" width="90" />
+            <img src="${imageUrl}" alt="${info}" style="display: block; margin: 0 auto;" width="150" />
             <p style="margin: 0; text-align: center; font-family: Inter; font-size: 23px; ">${info}</p>
             </div>`;
   },
@@ -13,4 +13,5 @@ tippy(".dot", {
   followCursor: true,
   theme: "light",
   animation: "fade",
+  duration: "350"
 });
