@@ -1006,11 +1006,6 @@ select {
   font-size: 17px;
   font-weight: 600;
   line-height: 25px;
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  width: 87px;
-  height: 25px;
   color: rgba(110, 110, 110, 1);
 }
 
