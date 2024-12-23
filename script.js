@@ -7,7 +7,7 @@ pricingDivs.forEach((div) => {
   let height = div.offsetHeight;
   let add = 100;
 
-  div.addEventListener("click", () => {
+  div.addEventListener("mouseenter", () => {
     div.classList.toggle("clicked_pricing_div");
 
     if (div.classList.contains("clicked_pricing_div")) {
