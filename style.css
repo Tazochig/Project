@@ -786,8 +786,13 @@ select {
 }
 
 .services_div:hover .services_img {
-  filter: brightness(0) saturate(100%) invert(200%) sepia(100%) saturate(406%)
+  filter: brightness(0) saturate(100%) invert(200%) saturate(406%)
     /* hue-rotate(20deg)*/ brightness(106%) contrast(97%);
+  transition: 500ms;
+}
+
+.services_div:hover .services_div_text {
+  color: white;
   transition: 500ms;
 }
 
@@ -1661,21 +1666,6 @@ select {
   bottom: 0pc;
   z-index: -1;
 }
-.services_div:hover {
-  background-color: rgba(61, 178, 255, 1);
-  color: white;
-  transition: 500ms;
-}
-
-.services_div:hover .services_div_text {
-  color: white;
-  transition: 500ms;
-}
-.services_div:hover .services_img {
-  filter: brightness(0) saturate(100%) invert(200%) sepia(100%) saturate(406%)
-    /* hue-rotate(20deg)*/ brightness(106%) contrast(97%);
-  transition: 500ms;
-}
 .team_video_div {
   width: 600px;
   height: 723px;
@@ -1694,4 +1684,3 @@ select {
   display: flex;
   justify-content: center;
 }
-
