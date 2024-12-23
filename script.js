@@ -156,3 +156,102 @@ function removeError(inputElement) {
     errorMessage.remove();
   }
 }
+
+const data = [
+  {
+    full_name: "Alice Johnson",
+    comment:
+      "Absolutely love this product! It’s so easy to use, and the features are fantastic. Totally worth the purchase!",
+    review: 2,
+    image: "https://randomuser.me/api/portraits/women/1.jpg",
+  },
+  {
+    full_name: "Bob Smith",
+    comment:
+      "This product is amazing. It works exactly as advertised, and the quality is top-notch. I’m extremely happy with it!",
+    review: 5,
+    image: "https://randomuser.me/api/portraits/men/2.jpg",
+  },
+  {
+    full_name: "Charlie Brown",
+    comment:
+      "An excellent product! It’s fast, intuitive, and really easy to navigate. It’s everything I needed and more.",
+    review: 4,
+    image: "https://randomuser.me/api/portraits/men/3.jpg",
+  },
+  {
+    full_name: "David Lee",
+    comment:
+      "I’m very impressed with this! It performs flawlessly and the design is sleek and modern. Highly recommend.",
+    review: 5,
+    image: "https://randomuser.me/api/portraits/men/4.jpg",
+  },
+  {
+    full_name: "Eva White",
+    comment:
+      "I’m extremely satisfied with this purchase. It’s user-friendly, reliable, and has exceeded my expectations in every way.",
+    review: 5,
+    image: "https://randomuser.me/api/portraits/women/5.jpg",
+  },
+];
+
+
+let container = document.getElementById("oe");
+// FETCH SLIDER
+function fetchData() {
+  data.forEach((item) => {
+
+    let stars = document.createElement("div");
+
+    stars.classList.add("stars");
+
+    for (let index = 0; index < item.review; index++) {
+      let star = document.createElement("i");
+      star.classList.add('fa-solid', 'fa-star');
+      star.style.color = "gold"
+      stars.appendChild(star)
+    }
+
+    // MIDDLE
+    let comment = document.createElement("p");
+    comment.innerHTML = item.comment;
+
+    let commentContainer = document.createElement("div");
+    commentContainer.classList.add("comment");
+    commentContainer.appendChild(comment);
+    // MIDDLE
+
+    // BOTTOM
+
+    let userImg = document.createElement("img");
+    userImg.classList.add("user_img");
+    userImg.src = item.image;
+
+
+    let userHeading = document.createElement("h1");
+    userHeading.classList.add("user_heading")
+    userHeading.innerHTML = item.full_name;
+    let userParagraph = document.createElement("p");
+    userParagraph.classList.add("user_paragraph")
+    userParagraph.innerHTML = "Reviews On Google"
+
+    let userText = document.createElement("div");
+    userText.classList.add("user_text");
+    userText.appendChild(userHeading)
+    userText.appendChild(userParagraph)
+
+
+    let user = document.createElement("div");
+    user.classList.add("user");
+    user.appendChild(userImg);
+    user.appendChild(userText);
+
+    let card = document.createElement("swiper-slide");
+    container.appendChild(card);
+    card.appendChild(stars)
+    card.appendChild(commentContainer)
+    card.appendChild(user)
+  });
+}
+
+fetchData();
