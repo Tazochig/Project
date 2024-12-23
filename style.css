@@ -1534,7 +1534,7 @@ select {
   line-height: 35px; /* 140% */
 }
 
-.item_text > p {
+.item_text > a {
   color: var(--Text-Color, #6e6e6e);
 
   /* Text Paragraph */
@@ -1543,6 +1543,7 @@ select {
   font-style: normal;
   font-weight: 400;
   line-height: 30px; /* 176.471% */
+  text-decoration: none;
 }
 
 .contacts_section_form {
