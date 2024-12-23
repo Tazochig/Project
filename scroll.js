@@ -43,6 +43,7 @@ Contact_bt.addEventListener("click", () => {
   });
 });
 
+// Scroll to "Contacts" section from "contatc us" btn
 btn.addEventListener("click", () => {
   contacts_scrl.scrollIntoView({
     behavior: "smooth",
