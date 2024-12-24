@@ -215,7 +215,8 @@ function fetchData() {
     comment.innerHTML = item.comment;
 
     let commentContainer = document.createElement("div");
-    commentContainer.classList.add("comment");
+    commentContainer.classList.add("larger_paragraph");
+    commentContainer.style.height = 120 + "px";
     commentContainer.appendChild(comment);
     // MIDDLE
 
@@ -226,10 +227,10 @@ function fetchData() {
     userImg.src = item.image;
 
     let userHeading = document.createElement("h1");
-    userHeading.classList.add("user_heading");
+    userHeading.classList.add("small_heading");
     userHeading.innerHTML = item.full_name;
     let userParagraph = document.createElement("p");
-    userParagraph.classList.add("user_paragraph");
+    userParagraph.classList.add("smaller_paragraph");
     userParagraph.innerHTML = "Reviews On Google";
 
     let userText = document.createElement("div");
@@ -316,7 +317,7 @@ contactsForm.addEventListener("submit", (event) => {
 
   if (isValid) {
     alert("gilocavt!!!");
-    form.reset();
+    contactsForm.reset();
   }
 });
 
