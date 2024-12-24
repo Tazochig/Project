@@ -195,21 +195,19 @@ const data = [
   },
 ];
 
-
 let container = document.getElementById("oe");
 // FETCH SLIDER
 function fetchData() {
   data.forEach((item) => {
-
     let stars = document.createElement("div");
 
     stars.classList.add("stars");
 
     for (let index = 0; index < item.review; index++) {
       let star = document.createElement("i");
-      star.classList.add('fa-solid', 'fa-star');
-      star.style.color = "gold"
-      stars.appendChild(star)
+      star.classList.add("fa-solid", "fa-star");
+      star.style.color = "gold";
+      stars.appendChild(star);
     }
 
     // MIDDLE
@@ -227,19 +225,17 @@ function fetchData() {
     userImg.classList.add("user_img");
     userImg.src = item.image;
 
-
     let userHeading = document.createElement("h1");
-    userHeading.classList.add("user_heading")
+    userHeading.classList.add("user_heading");
     userHeading.innerHTML = item.full_name;
     let userParagraph = document.createElement("p");
-    userParagraph.classList.add("user_paragraph")
-    userParagraph.innerHTML = "Reviews On Google"
+    userParagraph.classList.add("user_paragraph");
+    userParagraph.innerHTML = "Reviews On Google";
 
     let userText = document.createElement("div");
     userText.classList.add("user_text");
-    userText.appendChild(userHeading)
-    userText.appendChild(userParagraph)
-
+    userText.appendChild(userHeading);
+    userText.appendChild(userParagraph);
 
     let user = document.createElement("div");
     user.classList.add("user");
@@ -248,10 +244,33 @@ function fetchData() {
 
     let card = document.createElement("swiper-slide");
     container.appendChild(card);
-    card.appendChild(stars)
-    card.appendChild(commentContainer)
-    card.appendChild(user)
+    card.appendChild(stars);
+    card.appendChild(commentContainer);
+    card.appendChild(user);
   });
 }
 
 fetchData();
+
+const swiperEl = document.querySelector(".mySwiper");
+
+// swiper parameters
+const swiperParams = {
+  slidesPerView: 1,
+  breakpoints: {
+    1160: {
+      slidesPerView: 2,
+    },
+  },
+  on: {
+    init() {
+      // ...
+    },
+  },
+};
+
+// now we need to assign all parameters to Swiper element
+Object.assign(swiperEl, swiperParams);
+
+// and now initialize it
+swiperEl.initialize();
