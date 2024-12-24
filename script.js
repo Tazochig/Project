@@ -91,22 +91,22 @@ form.addEventListener("submit", (event) => {
   let isValid = true;
 
   if (!name1Regex.test(name1.value)) {
-    showError(name1, "Invalid name.");
+    showError(name1, "Invalid Name.");
     isValid = false;
   }
 
   if (!addyRegex.test(addy.value)) {
-    showError(addy, "Invalid address.");
+    showError(addy, "Invalid Address.");
     isValid = false;
   }
 
   if (!telRegex.test(tel.value)) {
-    showError(tel, "Invalid telephone number.");
+    showError(tel, "Invalid Number.");
     isValid = false;
   }
 
   if (select.value == 0) {
-    showError(select, "Please select a valid option.");
+    showError(select, "Invalid Option.");
     isValid = false;
   }
 
@@ -272,5 +272,97 @@ const swiperParams = {
 // now we need to assign all parameters to Swiper element
 Object.assign(swiperEl, swiperParams);
 
-// and now initialize it
-swiperEl.initialize();
+const contactsForm = document.getElementById("contactsForm");
+let contactsName = document.getElementById("contactsName");
+let contactsLastName = document.getElementById("contactsLastName");
+let contactsEmail = document.getElementById("contactsEmail");
+let contactsSubject = document.getElementById("contactsSubject");
+let contactsTextarea = document.getElementById("contactsTextarea");
+
+let contactsNameRegex = /^[A-Za-z]+([ '-][A-Za-z]+)*$/;
+let contactsLastNameRegex = /^[A-Za-z]+([ '-][A-Za-z]+)*$/;
+let contactsEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+let contactsSubjectRegex = /^[A-Za-z0-9\s.,?!'-]+$/;
+let contactsTextareaRegex = /^.{1,500}$/;
+
+contactsForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let isValid = true;
+
+  if (!contactsNameRegex.test(contactsName.value)) {
+    showError(contactsName, "Invalid Name.");
+    isValid = false;
+  }
+
+  if (!contactsLastNameRegex.test(contactsLastName.value)) {
+    showError(contactsLastName, "Invalid Last Name.");
+    isValid = false;
+  }
+
+  if (!contactsEmailRegex.test(contactsEmail.value)) {
+    showError(contactsEmail, "Invalid Email.");
+    isValid = false;
+  }
+
+  if (!contactsSubjectRegex.test(contactsSubject.value)) {
+    showError(contactsSubject, "Invalid Subject.");
+    isValid = false;
+  }
+
+  if (!contactsTextareaRegex.test(contactsTextarea.value)) {
+    showError(contactsTextarea, "Invalid Message.");
+    isValid = false;
+  }
+
+  if (isValid) {
+    alert("gilocavt!!!");
+    form.reset();
+  }
+});
+
+function showError(inputElement, message) {
+  if (!inputElement.parentElement.querySelector(".error-message")) {
+    const errorMessage = document.createElement("span");
+    errorMessage.classList.add("error-message");
+    errorMessage.textContent = message;
+    inputElement.parentElement.appendChild(errorMessage);
+  }
+}
+
+contactsName.addEventListener("input", () => {
+  if (contactsNameRegex.test(contactsName.value)) {
+    removeError(contactsName);
+  }
+});
+
+contactsLastName.addEventListener("input", () => {
+  if (contactsLastNameRegex.test(contactsLastName.value)) {
+    removeError(contactsLastName);
+  }
+});
+
+contactsEmail.addEventListener("input", () => {
+  if (contactsEmailRegex.test(contactsEmail.value)) {
+    removeError(contactsEmail);
+  }
+});
+
+contactsSubject.addEventListener("input", () => {
+  if (contactsSubjectRegex.test(contactsSubject.value)) {
+    removeError(contactsSubject);
+  }
+});
+
+contactsTextarea.addEventListener("input", () => {
+  if (contactsTextareaRegex.test(contactsTextarea.value)) {
+    removeError(contactsTextarea);
+  }
+});
+
+function removeError(inputElement) {
+  const errorMessage =
+    inputElement.parentElement.querySelector(".error-message");
+  if (errorMessage) {
+    errorMessage.remove();
+  }
+}
