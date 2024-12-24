@@ -238,6 +238,10 @@ header {
   width: 100%;
 }
 
+.header-section3-form-group-item {
+  height: 90px;
+}
+
 .header-section3-form-group-item > input {
   width: 100%;
   height: 70px;
@@ -256,6 +260,11 @@ header {
 
 input::placeholder {
   color: #fff;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
 }
 
 select {
@@ -1758,6 +1767,10 @@ swiper-slide {
   width: 100%;
 }
 
+.form_inputs_wrapper > div {
+  height: 90px;
+}
+
 .form_form_inp,
 .form_form_textarea {
   width: 100%;
@@ -1775,7 +1788,12 @@ swiper-slide {
   line-height: 30px;
 }
 
-.form_form_inp::placeholder {
+.form_textarea {
+  height: 160px;
+}
+
+.form_form_inp,
+.form_form_textarea::placeholder {
   color: #fff;
 }
 
