@@ -1363,8 +1363,6 @@ swiper-container {
 
 swiper-slide {
   background: #f3f3f3;
-  width: 100%;
-  max-width: 600px;
   display: flex;
   flex-direction: column;
   padding: 35px;
@@ -1426,6 +1424,9 @@ swiper-slide {
 }
 
 @media (max-width: 768px) {
+  swiper-slide {
+    width: 1000px;
+  }
   .slider_section {
     padding: 50px 25px 25px 25px;
   }
