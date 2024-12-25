@@ -8,8 +8,8 @@ pricingDivs.forEach((div) => {
   let height = div.offsetHeight;
   let add = 100;
 
-  div.addEventListener("mouseenter", () => {
-    div.classList.toggle("clicked_pricing_div");
+  div.addEventListener("mouseover", () => {
+    div.classList.add("clicked_pricing_div");
 
     if (div.classList.contains("clicked_pricing_div")) {
       div.style.height = height + add + "px";
