@@ -114,6 +114,8 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 i {
@@ -1527,8 +1529,9 @@ footer {
   background-color: rgba(61, 178, 255, 1);
   padding: 100px 105px;
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
+  gap: 135px;
+  width: 100vw;
 }
 .footer_left {
   width: 100%;
