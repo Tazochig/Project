@@ -193,6 +193,14 @@ header {
   transition: 0.3s;
 }
 
+.header-section1-nav-group2-item p {
+  transition: color 0.3s;
+}
+
+.header-section1-nav-group2-item:hover p {
+  color: #fff;
+}
+
 .header-section1-nav-group2-button > button {
   width: 180px;
   height: 65px;
@@ -709,8 +717,10 @@ select {
 
 .services_div:hover .services_img {
   filter: brightness(0) saturate(100%) invert(200%) saturate(406%)
-    /* hue-rotate(20deg)*/ brightness(106%) contrast(97%);
-  transition: 500ms;
+    brightness(106%) contrast(97%);
+  transition: filter 350ms ease-in-out;
+  backface-visibility: hidden;
+  transform: translateZ(1);
 }
 
 .services_div:hover .services_div_text {
