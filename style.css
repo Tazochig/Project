@@ -717,6 +717,10 @@ select {
   color: white;
   transition: 500ms;
 }
+.services_div:hover .small_heading {
+  color: white;
+  transition: 500ms;
+}
 .services_div_img {
   display: flex;
   justify-content: center;
@@ -1031,7 +1035,7 @@ select {
   height: 68px;
   color: #fff;
   background-color: #ffb830;
-  top: -1px;
+  top: -3px;
   right: -1px;
   display: none;
   transition: 0.5s;
@@ -1727,4 +1731,9 @@ footer {
   .footer_sub {
     max-width: 100%;
   }
+}
+:root {
+  --swiper-pagination-bullet-size: 20px;
+  --swiper-pagination-bullet-width: 20px;
+  --swiper-pagination-bullet-height: 20px;
 }
