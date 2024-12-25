@@ -913,6 +913,13 @@ select {
   border: none;
   cursor: pointer;
 }
+.choose_us_button:hover {
+  background-color:white;
+  color:#3db2ff;
+  transition: 500ms;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+
+}
 .choose_us_buttons {
   display: flex;
   gap: 30px;
