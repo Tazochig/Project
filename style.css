@@ -1267,7 +1267,7 @@ swiper-slide {
 .team_section_vid {
   height: 95%;
   width: 95%;
-  object-fit: contain;
+  object-fit: fill;
 }
 
 .team_section_content {
@@ -1746,4 +1746,14 @@ footer {
   --swiper-pagination-bullet-size: 20px;
   --swiper-pagination-bullet-width: 20px;
   --swiper-pagination-bullet-height: 20px;
+}
+.stars {
+  display: flex;
+  gap: 10px;
+}
+.footer_subscribe:hover {
+  background-color: #3d3d3d;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
 }
