@@ -727,7 +727,7 @@
               <div class="item_text">
                 <h1 class="small_heading">Head Office Address</h1>
                 <p class="larger_paragraph">
-                  <a
+                  <a class="larger_paragraph"
                     href="https://maps.app.goo.gl/wWQyzQKJspmdeq5KA"
                     target="_blank"
                     >Lumbung Hidup Street Madiun City East Java</a
@@ -742,7 +742,7 @@
               <div class="item_text">
                 <h1 class="small_heading">Email Address</h1>
                 <p class="larger_paragraph">
-                  <a
+                  <a class="larger_paragraph"
                     href="mailto:contact@reeducate.space?subject=Inquiry&body=Hello%20there%2C%20I%20have%20a%20question.%0A%0AAddress%3A%20Lumbung%20Hidup%20Street%2C%20Madiun%20City%2C%20East%20Java"
                     >Hello@Lauria.com</a
                   >
@@ -756,7 +756,7 @@
               <div class="item_text">
                 <h1 class="small_heading">Office Telephone</h1>
                 <p class="larger_paragraph">
-                  <a href="tel:+995593304368">( +62 ) 123 456 789</a>
+                  <a class="larger_paragraph" href="tel:+995593304368">( +62 ) 123 456 789</a>
                 </p>
               </div>
             </div>
@@ -773,11 +773,12 @@
               eiusmod tempor incididunt ut labore et dolore magna aliqua
             </p>
           </div>
-          <form class="form_form">
+          <form id="contactsForm" class="form_form">
             <div class="form_inputs">
               <div class="form_inputs_wrapper">
                 <div>
                   <input
+                  id="contactsName"
                     class="form_form_inp"
                     type="text"
                     placeholder="First Name"
@@ -785,6 +786,7 @@
                 </div>
                 <div>
                   <input
+                  id="contactsLastName"
                     class="form_form_inp"
                     type="text"
                     placeholder="Last Name"
@@ -794,6 +796,7 @@
               <div class="form_inputs_wrapper">
                 <div>
                   <input
+                  id="contactsEmail"
                     class="form_form_inp"
                     type="text"
                     placeholder="Email Address"
@@ -801,6 +804,7 @@
                 </div>
                 <div>
                   <input
+                  id="contactsSubject"
                     class="form_form_inp"
                     type="text"
                     placeholder="Subject"
@@ -812,7 +816,7 @@
               <textarea
                 class="form_form_textarea"
                 name=""
-                id=""
+                id="contactsTextarea"
                 placeholder="Your Message Here ..."
               ></textarea>
             </div>
@@ -825,13 +829,13 @@
       <footer>
         <div class="footer_left">
           <div>
-            <img src="/Images/dabanili_xelebi.png" alt="" />
-            <span>Lauria</span>
+            <img src="./Images/dabanili_xelebi.png" alt="" />
+            <h1 class="medium_heading white_text">Lauria</h1>
           </div>
-          <span
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua</span
-          >
+          <p class="larger_paragraph white_text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua
+          </p>
           <div class="footer_icons">
             <a href="https://www.facebook.com/reinventvs/" target="_blank">
               <img src="./Images/Fb.png" alt="Facebook" />
@@ -855,8 +859,10 @@
         </div>
         <div class="footer_right">
           <div class="footer_nav">
-            <span>Navigation</span>
-            <div class="footer_scroll">
+            <h1 class="small_heading white_text">Navigation</h1>
+            <div
+              class="footer_scroll larger_paragraph white_text bold_paragraph"
+            >
               <span>Homepage</span>
               <span>About Us</span>
               <span>Our Services</span>
@@ -865,8 +871,8 @@
             </div>
           </div>
           <div class="footer_sub">
-            <p class="footer_sub_head">Our Newslater</p>
-            <p class="footer_text">
+            <h1 class="small_heading white_text">Our Newslater</h1>
+            <p class="larger_paragraph white_text">
               Subscribe Our Newslater to get New Update & Big Discount Sale.
             </p>
             <div class="footer_email">
