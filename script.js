@@ -197,7 +197,7 @@ async function fetchSlides() {
 
     let userParagraph = document.createElement("p");
     userParagraph.classList.add("smaller_paragraph");
-    userParagraph.innerHTML = "Reviews On Google"; 
+    userParagraph.innerHTML = "Reviews On Google";
 
     let userText = document.createElement("div");
     userText.classList.add("user_text");
@@ -238,8 +238,7 @@ const swiperParams = {
     },
   },
   on: {
-    init() {
-    },
+    init() {},
   },
 };
 
@@ -339,3 +338,37 @@ function removeError(inputElement) {
     errorMessage.remove();
   }
 }
+
+const footerForm = document.getElementById("footerForm");
+let footerEmail = document.getElementById("footerEmail");
+let footerEmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+footerForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let isValid = true;
+
+  if (!footerEmailRegex.test(footerEmail.value)) {
+    showError(footerEmail, "Invalid Email.");
+    isValid = false;
+  }
+
+  if (isValid) {
+    alert("gilocavt!!!");
+    footerForm.reset();
+  }
+});
+
+function showError(inputElement, message) {
+  if (!inputElement.parentElement.querySelector(".error-message")) {
+    const errorMessage = document.createElement("span");
+    errorMessage.classList.add("error-message");
+    errorMessage.textContent = message;
+    inputElement.parentElement.appendChild(errorMessage);
+  }
+}
+
+footerEmail.addEventListener("input", () => {
+  if (footerEmailRegex.test(footerEmail.value)) {
+    removeError(footerEmail);
+  }
+});

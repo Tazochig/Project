@@ -1518,7 +1518,6 @@ swiper-slide {
   --swiper-pagination-bullet-border-radius: 0;
 }
 
-
 footer {
   background-color: rgba(61, 178, 255, 1);
   padding: 100px 105px;
@@ -1606,6 +1605,10 @@ footer {
   flex-direction: column;
   gap: 15px;
 }
+
+.footer_email > div {
+  height: 90px;
+}
 .footer_left > div {
   display: flex;
   gap: 22px;
@@ -1624,10 +1627,12 @@ footer {
     flex-direction: column;
   }
 
-  .footer_right, .footer_left{
+  .footer_right,
+  .footer_left {
     max-width: 100%;
   }
-  .footer_nav,.footer_sub{
+  .footer_nav,
+  .footer_sub {
     width: 100%;
     max-width: 45%;
   }
@@ -1639,12 +1644,12 @@ footer {
     gap: 50px;
   }
 
-  .footer_right{
+  .footer_right {
     flex-direction: column;
     gap: 50px;
   }
 
-  .footer_sub{
+  .footer_sub {
     max-width: 100%;
   }
 }
