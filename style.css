@@ -1167,7 +1167,7 @@ select {
 swiper-container {
   width: 100%;
   max-width: 1230px;
-  height: 400px;
+  height: 420px;
 }
 
 swiper-slide {
@@ -1177,19 +1177,6 @@ swiper-slide {
   padding: 35px;
   gap: 30px;
   height: 358px;
-}
-
-.comment {
-  color: var(--Text-Color, #6e6e6e);
-
-  /* Text Paragraph */
-  font-family: Inter;
-  font-size: 17px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px; /* 176.471% */
-  height: 120px;
-  overflow: scroll;
 }
 
 .user {
@@ -1617,6 +1604,10 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.footer_email > div {
+  height: 90px;
 }
 .footer_left > div {
   display: flex;
