@@ -16,7 +16,7 @@ tippy(".dot", {
   duration: "350"
 });
 
-
+// popup video
 function togglePopup() {
   document.getElementById("popup-1").classList.toggle("active");
 }
