@@ -157,105 +157,79 @@ function removeError(inputElement) {
   }
 }
 
-const data = [
-  {
-    full_name: "Alice Johnson",
-    comment:
-      "Absolutely love this product! It’s so easy to use, and the features are fantastic. Totally worth the purchase!",
-    review: 2,
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
-  },
-  {
-    full_name: "Bob Smith",
-    comment:
-      "This product is amazing. It works exactly as advertised, and the quality is top-notch. I’m extremely happy with it!",
-    review: 5,
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
-  },
-  {
-    full_name: "Charlie Brown",
-    comment:
-      "An excellent product! It’s fast, intuitive, and really easy to navigate. It’s everything I needed and more.",
-    review: 4,
-    image: "https://randomuser.me/api/portraits/men/3.jpg",
-  },
-  {
-    full_name: "David Lee",
-    comment:
-      "I’m very impressed with this! It performs flawlessly and the design is sleek and modern. Highly recommend.",
-    review: 5,
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
-  },
-  {
-    full_name: "Eva White",
-    comment:
-      "I’m extremely satisfied with this purchase. It’s user-friendly, reliable, and has exceeded my expectations in every way.",
-    review: 5,
-    image: "https://randomuser.me/api/portraits/women/5.jpg",
-  },
-];
-
 let container = document.getElementById("oe");
-// FETCH SLIDER
-function fetchData() {
-  data.forEach((item) => {
+const users = ["Tazochig", "varg814", "Tazochig", "varg814", "Tazochig"];
+i = 0;
+async function fetchSlides() {
+  try {
+    let data = await fetch(`https://api.github.com/users/${users[i]}`);
+    let user = await data.json();
+
+    const reviewCount = Math.floor(Math.random() * 5) + 1;
+    const commentText =
+      "Special thanks to Dito for making this project possible. Your dedication, hard work, and support have been invaluable. We truly appreciate your contributions and couldn't have done it without you. Thank you!";
+
     let stars = document.createElement("div");
-
     stars.classList.add("stars");
-
-    for (let index = 0; index < item.review; index++) {
+    for (let index = 0; index < reviewCount; index++) {
       let star = document.createElement("i");
       star.classList.add("fa-solid", "fa-star");
       star.style.color = "gold";
       stars.appendChild(star);
     }
 
-    // MIDDLE
     let comment = document.createElement("p");
-    comment.innerHTML = item.comment;
+    comment.innerHTML = commentText;
 
     let commentContainer = document.createElement("div");
     commentContainer.classList.add("larger_paragraph");
-    commentContainer.style.height = 120 + "px";
+    commentContainer.style.height = "120px";
+    commentContainer.style.overflow = "scroll";
     commentContainer.appendChild(comment);
-    // MIDDLE
-
-    // BOTTOM
 
     let userImg = document.createElement("img");
     userImg.classList.add("user_img");
-    userImg.src = item.image;
+    userImg.src = user.avatar_url;
 
     let userHeading = document.createElement("h1");
     userHeading.classList.add("small_heading");
-    userHeading.innerHTML = item.full_name;
+    userHeading.innerHTML = user.name || user.login;
+
     let userParagraph = document.createElement("p");
     userParagraph.classList.add("smaller_paragraph");
-    userParagraph.innerHTML = "Reviews On Google";
+    userParagraph.innerHTML = "Reviews On Google"; 
 
     let userText = document.createElement("div");
     userText.classList.add("user_text");
     userText.appendChild(userHeading);
     userText.appendChild(userParagraph);
 
-    let user = document.createElement("div");
-    user.classList.add("user");
-    user.appendChild(userImg);
-    user.appendChild(userText);
+    let userWrapper = document.createElement("div");
+    userWrapper.classList.add("user");
+    userWrapper.appendChild(userImg);
+    userWrapper.appendChild(userText);
 
     let card = document.createElement("swiper-slide");
-    container.appendChild(card);
     card.appendChild(stars);
     card.appendChild(commentContainer);
-    card.appendChild(user);
-  });
+    card.appendChild(userWrapper);
+
+    container.appendChild(card);
+
+    i++;
+
+    if (i < users.length) {
+      fetchSlides();
+    }
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+  }
 }
 
-fetchData();
+fetchSlides();
 
 const swiperEl = document.querySelector(".mySwiper");
 
-// swiper parameters
 const swiperParams = {
   slidesPerView: 1,
   breakpoints: {
@@ -265,12 +239,10 @@ const swiperParams = {
   },
   on: {
     init() {
-      // ...
     },
   },
 };
 
-// now we need to assign all parameters to Swiper element
 Object.assign(swiperEl, swiperParams);
 
 const contactsForm = document.getElementById("contactsForm");
