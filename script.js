@@ -1,6 +1,7 @@
 // pricing divs script
 
 let pricingDivs = document.querySelectorAll(".pricing_div");
+
 let absolute = document.querySelector(".absolute_recommended");
 
 pricingDivs.forEach((div) => {
@@ -372,3 +373,28 @@ footerEmail.addEventListener("input", () => {
     removeError(footerEmail);
   }
 });
+
+let priceHeadings = document.querySelectorAll(".price");
+
+async function fetchPrice() {
+  try {
+    // Fetch product data from the API
+    let data = await fetch("https://fakestoreapi.com/products/1");
+    let product = await data.json();
+
+    // Loop through all price elements and update them
+    priceHeadings.forEach((priceHeading) => {
+      priceHeading.innerHTML = `$${product.price}`; // Set price for each element
+    });
+  } catch (error) {
+    console.error("Error fetching the product price:", error);
+
+    // If an error occurs, update all elements with an error message
+    priceHeadings.forEach((priceHeading) => {
+      priceHeading.innerHTML = "Error loading price"; // Optional: Display an error message if fetch fails
+    });
+  }
+}
+
+// Call the fetchPrice function to load the price
+fetchPrice();
