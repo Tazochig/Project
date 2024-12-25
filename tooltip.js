@@ -15,3 +15,8 @@ tippy(".dot", {
   animation: "fade",
   duration: "350"
 });
+
+
+function togglePopup() {
+  document.getElementById("popup-1").classList.toggle("active");
+}
