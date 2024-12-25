@@ -1001,7 +1001,6 @@ select {
   flex-direction: column;
   align-items: center;
   gap: 35px;
-  height: 1155px;
 }
 .pricing_up_head {
   font-family: Inter;
