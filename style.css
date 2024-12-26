@@ -770,8 +770,8 @@ select {
   height: 68px;
   color: #fff;
   background-color: #ffb830;
-  top: -3px;
-  right: -1px;
+  top: -1px;
+  right: -2px;
   display: none;
   transition: 0.5s;
 }
