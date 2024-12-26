@@ -388,7 +388,7 @@ async function fetchPrice() {
     console.error("Error fetching the product price:", error);
 
     priceHeadings.forEach((priceHeading) => {
-      priceHeading.innerHTML = "Error loading price"; 
+      priceHeading.innerHTML = "Error loading price";
     });
   }
 }
