@@ -57,9 +57,9 @@ const quotes = [
   "Everything you need is already inside you.",
   "ადამიანები ხშირად გეტყვიან, რომ არ გამოიგვაო, უნა გამაიყვანო!",
   "Your time is limited, don't waste it living someone else's life.",
-  "Success is not final, failure is not fatal.",
+  "ერთი მერცხალი გაზაფხულს ვერ მოიყვანსო.",
   "Life is what happens when you're busy making other plans.",
-  "You miss 100% of the shots you don’t take.",
+  "ბატონო გიორგი ძალიან მკაცრადაც ნუ შემაფასებთ (PLS)",
 ];
 
 const quoteBtn = document.getElementById("quoteBtn");
@@ -159,7 +159,7 @@ function removeError(inputElement) {
 }
 
 let container = document.getElementById("oe");
-const users = ["Tazochig", "varg814", "Tazochig", "varg814", "Tazochig"];
+const users = ["Tazochig", "Tazochig", "Tazochig", "Tazochig", "Tazochig"];
 i = 0;
 async function fetchSlides() {
   try {
@@ -168,7 +168,8 @@ async function fetchSlides() {
 
     const reviewCount = Math.floor(Math.random() * 5) + 1;
     const commentText =
-      "Special thanks to Dito for making this project possible. Your dedication, hard work, and support have been invaluable. We truly appreciate your contributions and couldn't have done it without you. Thank you!";
+      "Lorem ipsum dolor sit amet, consectetur
+adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.";
 
     let stars = document.createElement("div");
     stars.classList.add("stars");
