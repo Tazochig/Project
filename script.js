@@ -168,8 +168,7 @@ async function fetchSlides() {
 
     const reviewCount = Math.floor(Math.random() * 5) + 1;
     const commentText =
-      "Lorem ipsum dolor sit amet, consectetur
-adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.";
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.";
 
     let stars = document.createElement("div");
     stars.classList.add("stars");
